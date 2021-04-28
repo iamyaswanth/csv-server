@@ -6,5 +6,5 @@ then
 fi
 for i in `seq $n`
 do
-echo $((i-1))"," `od -An -N1 -i /dev/random` >>inputFile
+echo $((i-1))"," `od -An -N1 -i /dev/random` >>./inputFile
 done
