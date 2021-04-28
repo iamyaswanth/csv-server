@@ -31,3 +31,11 @@ Delete the container.
 Run the container to expose the container port 9300 to host on 9393 and set the environment variable.
 
 	docker run -p 9393:9300 -e CSVSERVER_BORDER=Orange -v ./inputFile:/csvserver/inputdata -d infracloudio/csvserver:latest
+	
+Commands for Part-2:
+
+	docker-compose up -d
+
+Commands for Part-3:
+
+	docker-compose up -d
