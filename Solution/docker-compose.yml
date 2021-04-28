@@ -1,0 +1,22 @@
+--- 
+version: "3.2"
+services: 
+  csvserver: 
+    container_name: csvserver
+    image: infracloudio/csvserver:latest
+    ports: 
+      - 9393:9300
+    volumes:
+            - ./inputFile:/csvserver/inputdata
+    environment:
+            - CSVSERVER_BORDER=Orange
+  prometheus:
+    container_name: monitoring
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:z
+    ports:
+      - 9090:9090
+    depends_on:
+      - csvserver
+

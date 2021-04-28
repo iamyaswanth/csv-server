@@ -1,0 +1,11 @@
+scrape_configs:
+  # metrics_path defaults to '/metrics'
+  # scheme defaults to 'http'.
+  - job_name: prometheus
+
+    scrape_interval: 5s
+    scrape_timeout: 2s
+    honor_labels: true
+
+    static_configs:
+      - targets: ['csvserver:9300']
